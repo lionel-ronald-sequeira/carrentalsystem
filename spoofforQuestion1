@@ -1,0 +1,378 @@
+mysql> insert into crs_owner values(1,'Bank');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(2,'Bank');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(3,'Bank');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(4,'Bank');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(5,'Bank');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(6,'Individual');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(7,'Individual');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(8,'Individual');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(9,'Individual');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(10,'Individual');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(11,'Individual');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(12,'Company');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(13,'Company');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(14,'Company');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_owner values(15,'Company');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from crs_owner;
++----------+------------+
+| owner_id | owner_type |
++----------+------------+
+|        1 | Bank       |
+|        2 | Bank       |
+|        3 | Bank       |
+|        4 | Bank       |
+|        5 | Bank       |
+|        6 | Individual |
+|        7 | Individual |
+|        8 | Individual |
+|        9 | Individual |
+|       10 | Individual |
+|       11 | Individual |
+|       12 | Company    |
+|       13 | Company    |
+|       14 | Company    |
+|       15 | Company    |
++----------+------------+
+15 rows in set (0.00 sec)
+
+mysql> insert into crs_bank values('SB1001','State Bank Of India','8179457711','12',1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_bank values('BOA001','Bank Of America','6179466712','28',2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_bank values('HDFC002','HDFC Bank','9179457711','11',3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_bank values('WF0012','Wells Fargo','5179457711','8',4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_bank values('AB001','Axis Bank','6178819473','12',5);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from crs_bank;
++---------+---------------------+------------+---------------------+----------+
+| bank_id | bank_name           | phone_no   | lease_period_months | owner_id |
++---------+---------------------+------------+---------------------+----------+
+| AB001   | Axis Bank           | 6178819473 | 12                  |        5 |
+| BOA001  | Bank Of America     | 6179466712 | 28                  |        2 |
+| HDFC002 | HDFC Bank           | 9179457711 | 11                  |        3 |
+| SB1001  | State Bank Of India | 8179457711 | 12                  |        1 |
+| WF0012  | Wells Fargo         | 5179457711 | 8                   |        4 |
++---------+---------------------+------------+---------------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into crs_individual values('SS12345678','Joel','Das','99203089','8',6);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_individual values('SS87654321','Ronald','Lobo','98207732','10',7);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_individual values('SS21324567','Aaron','Lobo','97734425','12',8);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_individual values('SS32145678','Mervyn','Dsouza','99207732','16',9);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_individual values('SS33445566','Godwin','Dsouza','99204059','20',10);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from crs_individual;
++------------+------------+-----------+----------+---------------------+----------+
+| ssn        | first_name | last_name | phone_no | lease_period_months | owner_id |
++------------+------------+-----------+----------+---------------------+----------+
+| SS12345678 | Joel       | Das       | 99203089 | 8                   |        6 |
+| SS21324567 | Aaron      | Lobo      | 97734425 | 12                  |        8 |
+| SS32145678 | Mervyn     | Dsouza    | 99207732 | 16                  |        9 |
+| SS33445566 | Godwin     | Dsouza    | 99204059 | 20                  |       10 |
+| SS87654321 | Ronald     | Lobo      | 98207732 | 10                  |        7 |
++------------+------------+-----------+----------+---------------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> insert into crs_rental_company values('RC12345678','Acropolis','87203089','8',11);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_rental_company values('RC87654321','AndroCarPolis','68207732','10',12);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_rental_company values('RC21324567','LetsRideIn','57734425','12',13);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_rental_company values('RC32145678','Ammy','549207732','16',14);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into crs_rental_company values('RC33445566','DavidCarService','66204059','20',15);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> 
+mysql> select * from crs_rental_company;
++------------+-----------------+-----------+---------------------+----------+
+| company_id | company_name    | phone_no  | lease_period_months | owner_id |
++------------+-----------------+-----------+---------------------+----------+
+| RC12345678 | Acropolis       | 87203089  | 8                   |       11 |
+| RC21324567 | LetsRideIn      | 57734425  | 12                  |       13 |
+| RC32145678 | Ammy            | 549207732 | 16                  |       14 |
+| RC33445566 | DavidCarService | 66204059  | 20                  |       15 |
+| RC87654321 | AndroCarPolis   | 68207732  | 10                  |       12 |
++------------+-----------------+-----------+---------------------+----------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(1,'Lionel','Sequeira','817-881-9432','Causley Avenue','Texas','76010','2015-11-25 22:04:18');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(2,'Akshay','Parenky','817-881-9440','Causley Avenue','Texas','76010','2015-11-25 22:04:42');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(3,'Jerrin','Jacob','817-881-9439','Causley Avenue','Texas','76010','2015-11-25 22:05:06');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(4,'Tanmay','Data','817-881-9459','Causley Avenue','Texas','76010','2015-11-25 22:05:46');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(5,'Ankit','Pathak','817-881-9450','Causley Avenue','Texas','76010','2015-11-25 22:06:54');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(6,'Vipul','Mahadik','817-881-9348','Cooper Street','Texas','76013','2015-11-25 22:09:58');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(7,'Gaurav','Kolekar','817-881-9315','Cooper Street','Texas','76013','2015-11-25 22:10:33');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(8,'Arjun','Vekariya','817-881-8115','Center Street','Texas','76010','2015-11-25 22:15:30');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(9,'Ashay','Rajimwale','817-881-7115','Center Street','Texas','76010','2015-11-25 22:19:32');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(10,'Pawan','Kumar','817-881-6115','Summit Avenue','Texas','76013','2015-11-25 22:22:12');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(11,'Kartik','Hegde','817-881-9436','Causley Avenue','Texas','76010','2015-11-27 13:56:55');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_customer VALUES(12,'Darren','Dsouza','817-881-9436','South West','Texas','76010','2015-11-27 13:56:55');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from crs_customer;
++-------------+------------+-----------+--------------+----------------+-------+---------+---------------------+
+| customer_id | first_name | last_name | phone_no     | street         | state | zipcode | creation_date       |
++-------------+------------+-----------+--------------+----------------+-------+---------+---------------------+
+|           1 | Lionel     | Sequeira  | 817-881-9432 | Causley Avenue | Texas | 76010   | 2015-11-25 22:04:18 |
+|           2 | Akshay     | Parenky   | 817-881-9440 | Causley Avenue | Texas | 76010   | 2015-11-25 22:04:42 |
+|           3 | Jerrin     | Jacob     | 817-881-9439 | Causley Avenue | Texas | 76010   | 2015-11-25 22:05:06 |
+|           4 | Tanmay     | Data      | 817-881-9459 | Causley Avenue | Texas | 76010   | 2015-11-25 22:05:46 |
+|           5 | Ankit      | Pathak    | 817-881-9450 | Causley Avenue | Texas | 76010   | 2015-11-25 22:06:54 |
+|           6 | Vipul      | Mahadik   | 817-881-9348 | Cooper Street  | Texas | 76013   | 2015-11-25 22:09:58 |
+|           7 | Gaurav     | Kolekar   | 817-881-9315 | Cooper Street  | Texas | 76013   | 2015-11-25 22:10:33 |
+|           8 | Arjun      | Vekariya  | 817-881-8115 | Center Street  | Texas | 76010   | 2015-11-25 22:15:30 |
+|           9 | Ashay      | Rajimwale | 817-881-7115 | Center Street  | Texas | 76010   | 2015-11-25 22:19:32 |
+|          10 | Pawan      | Kumar     | 817-881-6115 | Summit Avenue  | Texas | 76013   | 2015-11-25 22:22:12 |
+|          11 | Kartik     | Hegde     | 817-881-9436 | Causley Avenue | Texas | 76010   | 2015-11-27 13:56:55 |
+|          12 | Darren     | Dsouza    | 817-881-9436 | South West     | Texas | 76010   | 2015-11-27 13:56:55 |
++-------------+------------+-----------+--------------+----------------+-------+---------+---------------------+
+12 rows in set (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES ('1001','Toyota Corolla',2015,100.00,350.00,'N','Y','N','N','N','N','Y',1,'2015-11-25 03:21:58');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1002','Toyota Land Cruiser',2015,200.00,600.00,'N','N','Y','Y','N','N','Y',2,'2015-11-25 03:23:43');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1003','Chevrolet Silverado',2014,200.00,600.00,'N','N','Y','N','Y','N','Y',3,'2015-11-25 03:24:31');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1004','Ford F150',2015,100.00,300.00,'N','N','Y','N','Y','N','Y',4,'2015-11-25 03:25:28');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1005','Dorge Ram1500',2015,100.00,300.00,'N','N','N','N','N','N','Y',5,'2015-11-25 03:25:48');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1006','Honda CRZ',2013,80.00,400.00,'Y','N','N','N','N','N','Y',6,'2015-11-25 21:18:15');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1007','BMW 7 series',2013,80.00,400.00,'N','N','Y','N','N','N','Y',7,'2015-11-25 21:18:56');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1008','Mercedes GL 400',2013,80.00,400.00,'N','N','Y','Y','N','N','Y',8,'2015-11-25 21:19:33');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1009','Cadillac ATS-V',2015,200.00,1000.00,'N','Y','N','N','N','N','Y',9,'2015-11-25 21:21:02');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1010','Ford Focus',2014,150.00,170.00,'Y','N','N','N','N','N','Y',10,'2015-11-25 21:22:46');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1011','GMC Canyon',2014,200.00,600.00,'N','N','Y','Y','N','N','Y',11,'2015-11-25 21:25:51');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1012','Honda ODYSSEY',2013,250.00,700.00,'N','N','Y','N','N','Y','Y',12,'2015-11-25 21:27:08');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1013','Toyota RAV4',2013,110.00,440.00,'Y','N','N','Y','N','N','Y',12,'2015-11-25 21:28:16');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1014','Audi Q7',2014,400.00,1600.00,'N','N','Y','Y','N','N','Y',13,'2015-11-25 21:29:53');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1015','Nissan JUKE',2014,200.00,900.00,'Y','N','N','Y','N','N','Y',14,'2015-11-25 21:30:52');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1016','Ford Fusion',2014,300.00,1500.00,'N','N','Y','N','N','N','Y',15,'2015-11-25 21:32:12');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1017','Nissan Sentra',2013,250.00,700.00,'N','Y','N','N','N','N','Y',1,'2015-11-25 21:33:17');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1018','Dorge Charger',2013,350.00,1700.00,'N','Y','N','N','N','N','Y',1,'2015-11-25 21:34:21');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1019','Nissan Maxima',2014,420.00,1200.00,'N','N','Y','N','N','N','Y',2,'2015-11-25 21:35:24');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1020','Toyato Sienna',2013,100.00,500.00,'N','N','Y','N','N','Y','Y',3,'2015-11-25 21:36:38');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1021','Honda Fit',2015,100.00,600.00,'Y','N','N','N','N','N','Y',3,'2015-11-25 22:23:42');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1022','Honda Xami',2015,380.00,1150.00,'N','Y','N','N','N','N','Y',4,'2015-11-25 22:24:52');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1023','Audi A4',2015,750.00,2500.00,'N','Y','N','N','N','N','Y',4,'2015-11-25 22:25:29');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1024','Nissan Titan',2014,400.00,1600.00,'N','N','Y','N','N','N','Y',5,'2015-11-25 22:26:40');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1025','Nissan A4',2013,250.00,700.00,'N','Y','N','N','N','N','Y',6,'2015-11-25 21:33:17');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1026','Dorge Fusion',2013,350.00,1700.00,'N','Y','N','N','N','N','Y',6,'2015-11-25 21:34:21');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1027','Toyota A4',2015,750.00,2500.00,'N','Y','N','N','N','N','Y',11,'2015-11-25 22:25:29');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1028','Qualis',2014,400.00,1600.00,'N','N','Y','N','N','N','Y',11,'2015-11-25 22:26:40');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1029','Innova',2013,250.00,700.00,'N','Y','N','N','N','N','Y',1,'2015-11-25 21:33:17');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_car VALUES('1030','Honda City',2013,350.00,1700.00,'N','Y','N','N','N','N','Y',14,'2015-11-25 21:34:21');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from crs_car;
++------------+---------------------+------+------------+-------------+--------------+-------------+------------+----------+------------+----------+-----------+----------+---------------------+
+| vehicle_id | model               | year | daily_rate | weekly_rate | compact_flag | medium_flag | large_flag | suv_flag | truck_flag | van_flag | available | owner_id | creation_date       |
++------------+---------------------+------+------------+-------------+--------------+-------------+------------+----------+------------+----------+-----------+----------+---------------------+
+| 1001       | Toyota Corolla      | 2015 |     100.00 |      350.00 | N            | Y           | N          | N        | N          | N        | Y         |        1 | 2015-11-25 03:21:58 |
+| 1002       | Toyota Land Cruiser | 2015 |     200.00 |      600.00 | N            | N           | Y          | Y        | N          | N        | Y         |        2 | 2015-11-25 03:23:43 |
+| 1003       | Chevrolet Silverado | 2014 |     200.00 |      600.00 | N            | N           | Y          | N        | Y          | N        | Y         |        3 | 2015-11-25 03:24:31 |
+| 1004       | Ford F150           | 2015 |     100.00 |      300.00 | N            | N           | Y          | N        | Y          | N        | Y         |        4 | 2015-11-25 03:25:28 |
+| 1005       | Dorge Ram1500       | 2015 |     100.00 |      300.00 | N            | N           | N          | N        | N          | N        | Y         |        5 | 2015-11-25 03:25:48 |
+| 1006       | Honda CRZ           | 2013 |      80.00 |      400.00 | Y            | N           | N          | N        | N          | N        | Y         |        6 | 2015-11-25 21:18:15 |
+| 1007       | BMW 7 series        | 2013 |      80.00 |      400.00 | N            | N           | Y          | N        | N          | N        | Y         |        7 | 2015-11-25 21:18:56 |
+| 1008       | Mercedes GL 400     | 2013 |      80.00 |      400.00 | N            | N           | Y          | Y        | N          | N        | Y         |        8 | 2015-11-25 21:19:33 |
+| 1009       | Cadillac ATS-V      | 2015 |     200.00 |     1000.00 | N            | Y           | N          | N        | N          | N        | Y         |        9 | 2015-11-25 21:21:02 |
+| 1010       | Ford Focus          | 2014 |     150.00 |      170.00 | Y            | N           | N          | N        | N          | N        | Y         |       10 | 2015-11-25 21:22:46 |
+| 1011       | GMC Canyon          | 2014 |     200.00 |      600.00 | N            | N           | Y          | Y        | N          | N        | Y         |       11 | 2015-11-25 21:25:51 |
+| 1012       | Honda ODYSSEY       | 2013 |     250.00 |      700.00 | N            | N           | Y          | N        | N          | Y        | Y         |       12 | 2015-11-25 21:27:08 |
+| 1013       | Toyota RAV4         | 2013 |     110.00 |      440.00 | Y            | N           | N          | Y        | N          | N        | Y         |       12 | 2015-11-25 21:28:16 |
+| 1014       | Audi Q7             | 2014 |     400.00 |     1600.00 | N            | N           | Y          | Y        | N          | N        | Y         |       13 | 2015-11-25 21:29:53 |
+| 1015       | Nissan JUKE         | 2014 |     200.00 |      900.00 | Y            | N           | N          | Y        | N          | N        | Y         |       14 | 2015-11-25 21:30:52 |
+| 1016       | Ford Fusion         | 2014 |     300.00 |     1500.00 | N            | N           | Y          | N        | N          | N        | Y         |       15 | 2015-11-25 21:32:12 |
+| 1017       | Nissan Sentra       | 2013 |     250.00 |      700.00 | N            | Y           | N          | N        | N          | N        | Y         |        1 | 2015-11-25 21:33:17 |
+| 1018       | Dorge Charger       | 2013 |     350.00 |     1700.00 | N            | Y           | N          | N        | N          | N        | Y         |        1 | 2015-11-25 21:34:21 |
+| 1019       | Nissan Maxima       | 2014 |     420.00 |     1200.00 | N            | N           | Y          | N        | N          | N        | Y         |        2 | 2015-11-25 21:35:24 |
+| 1020       | Toyato Sienna       | 2013 |     100.00 |      500.00 | N            | N           | Y          | N        | N          | Y        | Y         |        3 | 2015-11-25 21:36:38 |
+| 1021       | Honda Fit           | 2015 |     100.00 |      600.00 | Y            | N           | N          | N        | N          | N        | Y         |        3 | 2015-11-25 22:23:42 |
+| 1022       | Honda Xami          | 2015 |     380.00 |     1150.00 | N            | Y           | N          | N        | N          | N        | Y         |        4 | 2015-11-25 22:24:52 |
+| 1023       | Audi A4             | 2015 |     750.00 |     2500.00 | N            | Y           | N          | N        | N          | N        | Y         |        4 | 2015-11-25 22:25:29 |
+| 1024       | Nissan Titan        | 2014 |     400.00 |     1600.00 | N            | N           | Y          | N        | N          | N        | Y         |        5 | 2015-11-25 22:26:40 |
+| 1025       | Nissan A4           | 2013 |     250.00 |      700.00 | N            | Y           | N          | N        | N          | N        | Y         |        6 | 2015-11-25 21:33:17 |
+| 1026       | Dorge Fusion        | 2013 |     350.00 |     1700.00 | N            | Y           | N          | N        | N          | N        | Y         |        6 | 2015-11-25 21:34:21 |
+| 1027       | Toyota A4           | 2015 |     750.00 |     2500.00 | N            | Y           | N          | N        | N          | N        | Y         |       11 | 2015-11-25 22:25:29 |
+| 1028       | Qualis              | 2014 |     400.00 |     1600.00 | N            | N           | Y          | N        | N          | N        | Y         |       11 | 2015-11-25 22:26:40 |
+| 1029       | Innova              | 2013 |     250.00 |      700.00 | N            | Y           | N          | N        | N          | N        | Y         |        1 | 2015-11-25 21:33:17 |
+| 1030       | Honda City          | 2013 |     350.00 |     1700.00 | N            | Y           | N          | N        | N          | N        | Y         |       14 | 2015-11-25 21:34:21 |
++------------+---------------------+------+------------+-------------+--------------+-------------+------------+----------+------------+----------+-----------+----------+---------------------+
+30 rows in set (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES (1,1,'1006','2015-11-29','2015-11-30',0.00,'daily','active',2,0,'2015-11-29 21:30:33','2015-11-30');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(2,6,'1015','2015-12-01','2015-12-05',0.00,'daily','scheduled',5,0,'2015-11-29 21:44:54','2015-12-05');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(3,4,'1004','2015-11-29','2015-12-05',0.00,'weekly','active',0,1,'2015-11-29 21:45:23','2015-12-05');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(4,8,'1016','2015-12-01','2015-12-09',0.00,'daily','scheduled',9,0,'2015-11-29 21:49:51','2015-12-09');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(5,10,'1014','2015-11-29','2015-12-16',0.00,'daily','active',18,0,'2015-11-29 21:53:57','2015-12-16');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(6,8,'1015','2015-12-29','2015-12-30',0.00,'daily','scheduled',2,0,'2015-11-29 21:54:58','2015-12-30');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(7,9,'1003','2015-11-29','2015-12-10',0.00,'daily','active',12,0,'2015-11-29 21:56:24','2015-12-10');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(8,4,'1015','2015-12-14','2015-12-15',0.00,'daily','scheduled',2,0,'2015-11-29 21:57:05','2015-12-15');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(9,11,'1029','2015-11-29','2015-12-10',0.00,'daily','active',12,0,'2015-11-29 21:58:23','2015-12-10');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO crs_rental VALUES(10,7,'1004','2015-12-27','2015-12-30',0.00,'daily','scheduled',4,0,'2015-11-29 21:59:05','2015-12-30');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from crs_rental;
++-----------+-------------+------------+------------+-------------+------------+-------------+---------------+------------+-------------+---------------------+------------+
+| rental_id | customer_id | vehicle_id | start_date | return_date | amount_due | rental_type | rental_timing | no_of_days | no_of_weeks | creation_date       | end_date   |
++-----------+-------------+------------+------------+-------------+------------+-------------+---------------+------------+-------------+---------------------+------------+
+|         1 |           1 | 1006       | 2015-11-29 | 2015-11-30  |       0.00 | daily       | active        |          2 |           0 | 2015-11-29 21:30:33 | 2015-11-30 |
+|         2 |           6 | 1015       | 2015-12-01 | 2015-12-05  |       0.00 | daily       | scheduled     |          5 |           0 | 2015-11-29 21:44:54 | 2015-12-05 |
+|         3 |           4 | 1004       | 2015-11-29 | 2015-12-05  |       0.00 | weekly      | active        |          0 |           1 | 2015-11-29 21:45:23 | 2015-12-05 |
+|         4 |           8 | 1016       | 2015-12-01 | 2015-12-09  |       0.00 | daily       | scheduled     |          9 |           0 | 2015-11-29 21:49:51 | 2015-12-09 |
+|         5 |          10 | 1014       | 2015-11-29 | 2015-12-16  |       0.00 | daily       | active        |         18 |           0 | 2015-11-29 21:53:57 | 2015-12-16 |
+|         6 |           8 | 1015       | 2015-12-29 | 2015-12-30  |       0.00 | daily       | scheduled     |          2 |           0 | 2015-11-29 21:54:58 | 2015-12-30 |
+|         7 |           9 | 1003       | 2015-11-29 | 2015-12-10  |       0.00 | daily       | active        |         12 |           0 | 2015-11-29 21:56:24 | 2015-12-10 |
+|         8 |           4 | 1015       | 2015-12-14 | 2015-12-15  |       0.00 | daily       | scheduled     |          2 |           0 | 2015-11-29 21:57:05 | 2015-12-15 |
+|         9 |          11 | 1029       | 2015-11-29 | 2015-12-10  |       0.00 | daily       | active        |         12 |           0 | 2015-11-29 21:58:23 | 2015-12-10 |
+|        10 |           7 | 1004       | 2015-12-27 | 2015-12-30  |       0.00 | daily       | scheduled     |          4 |           0 | 2015-11-29 21:59:05 | 2015-12-30 |
++-----------+-------------+------------+------------+-------------+------------+-------------+---------------+------------+-------------+---------------------+------------+
+10 rows in set (0.00 sec)
+

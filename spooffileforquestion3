@@ -1,0 +1,73 @@
+mysql> CREATE VIEW CAR_DETAILS AS select c.vehicle_id,c.model as CAR,c.compact_flag,c.medium_flag,c.large_flag,c.suv_flag,c.truck_flag,c.van_flag,b.bank_name as CAR_OWNER from crs_car c inner join crs_bank b on c.owner_id=b.owner_id UNION select c.vehicle_id,c.model as CAR,c.compact_flag,c.medium_flag,c.large_flag,c.suv_flag,c.truck_flag,c.van_flag,r.company_name as CAR_OWNER from crs_car c inner join crs_rental_company r on c.owner_id=r.owner_id UNION select c.vehicle_id,c.model,c.compact_flag,c.medium_flag,c.large_flag,c.suv_flag,c.truck_flag,c.van_flag as CAR,i.first_name as CAR_OWNER from crs_car c inner join crs_individual i on c.owner_id=i.owner_id;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select r.vehicle_id,o.car,o.car_owner,sum(amount_due) as EARNING
+    -> from crs_rental r inner join  car_details o
+    -> on r.vehicle_id=o.vehicle_id
+    -> where o.compact_flag='Y'  and o.suv_flag='Y' and r.end_date>='2015-11-1' and r.end_date<='2015-11-30'
+    -> group by r.vehicle_id,o.car,o.car_owner;
++------------+-------------+---------------+---------+
+| vehicle_id | car         | car_owner     | EARNING |
++------------+-------------+---------------+---------+
+| 1013       | Toyota RAV4 | AndroCarPolis |  220.00 |
++------------+-------------+---------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select r.vehicle_id,o.car,o.car_owner,sum(amount_due) as EARNING
+    -> from crs_rental r inner join  car_details o
+    -> on r.vehicle_id=o.vehicle_id
+    -> where r.end_date>='2015-11-1' and r.end_date<='2015-11-30'
+    -> group by r.vehicle_id,o.car,o.car_owner;
++------------+----------------+---------------+---------+
+| vehicle_id | car            | car_owner     | EARNING |
++------------+----------------+---------------+---------+
+| 1006       | Honda CRZ      | Joel          |    0.00 |
+| 1009       | Cadillac ATS-V | Mervyn        |    0.00 |
+| 1012       | Honda ODYSSEY  | AndroCarPolis | 2100.00 |
+| 1013       | Toyota RAV4    | AndroCarPolis |  220.00 |
+| 1014       | Audi Q7        | LetsRideIn    |  800.00 |
++------------+----------------+---------------+---------+
+5 rows in set (0.00 sec)
+
+mysql> delete from crs_bank;
+Query OK, 5 rows affected (0.00 sec)
+
+mysql> delete from crs_individual;
+Query OK, 5 rows affected (0.00 sec)
+
+mysql> delete from crs_rental_company;
+Query OK, 5 rows affected (0.01 sec)
+
+mysql> delete from crs_owner;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`car_rental_system`.`crs_car`, CONSTRAINT `car_fk` FOREIGN KEY (`owner_id`) REFERENCES `crs_owner` (`owner_id`))
+mysql> delete from crs_car;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`car_rental_system`.`crs_rental`, CONSTRAINT `rental_fk2` FOREIGN KEY (`vehicle_id`) REFERENCES `crs_car` (`vehicle_id`))
+mysql> delete from crs_rental;
+Query OK, 14 rows affected (0.00 sec)
+
+mysql> delete from crs_car;
+Query OK, 31 rows affected (0.01 sec)
+
+mysql> delete from crs_customer;
+Query OK, 12 rows affected (0.00 sec)
+
+mysql> delete from crs_owner;
+Query OK, 15 rows affected (0.02 sec)
+
+mysql> alter table customer autoincrement=1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'autoincrement=1' at line 1
+mysql> alter table customer auto_increment=1;
+ERROR 1146 (42S02): Table 'car_rental_system.customer' doesn't exist
+mysql> alter table crs_customer auto_increment=1;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table crs_owner auto_increment=1;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table crs_rental auto_increment=1;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> tee  D:\db1Project2Part2\spoofforQuestion1
